@@ -33,7 +33,7 @@ npm install
 
 2. Create a `.env` file in the project root with the environment variables from the assignment email.
 
-3. Set up the MySQL DB as described below - https://github.com/SaharTo/PubPlusAPI/edit/main/README.md#setting-up-the-mysql-database-locally
+3. Set up the MySQL DB as described below - https://github.com/SaharTo/PubPlusAPI?tab=readme-ov-file#setting-up-the-mysql-database-locally
 
 4. Start the API in development mode:
 

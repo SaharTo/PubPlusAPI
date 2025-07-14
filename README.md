@@ -33,7 +33,9 @@ npm install
 
 2. Create a `.env` file in the project root with the environment variables from the assignment email.
 
-3. Start the API in development mode:
+3. Set up the MySQL DB as described below - https://github.com/SaharTo/PubPlusAPI/edit/main/README.md#setting-up-the-mysql-database-locally
+
+4. Start the API in development mode:
 
 ```bash
 npm run dev
@@ -72,5 +74,52 @@ Only `login` and `verify-token` are used by the UI.
 - The API must be connected to the MySQL database for full functionality.  
 - It stores and manages all worker data and authentication credentials.  
 - Restart the API after any changes to `.env`.
+
+
+---
+
+
+
+# Setting up the MySQL Database Locally
+
+This guide helps you create a MySQL database, import the provided `pubplus.sql` file, and verify the data.
+
+---
+
+## Prerequisites
+
+- MySQL Server installed and running  
+- MySQL Workbench installed  
+- `pubplus.sql` dump file available locally
+
+---
+
+## Steps
+
+1. **Connect to MySQL Server**  
+   Open MySQL Workbench and create (or use existing) connection:  
+   - Hostname: `127.0.0.1`  
+   - Port: `3306`  
+   - Username: as described in the API `.env` file  
+   - Password: as described in the API `.env` file  
+   - Test and save connection  
+
+2. **Create Database**  
+   In Schemas panel, right-click → **Create Schema...**  
+   Name it `pubplus`  
+   Click **Apply** then **Finish**
+
+3. **Import SQL File**  
+   Go to **Server → Data Import**  
+   Select **Import from Self-Contained File** and browse to `pubplus.sql`  
+   Choose `pubplus` as the target schema  
+   Click **Start Import**
+
+4. **Verify Import**  
+   Refresh Schemas panel  
+   Expand `pubplus` schema  
+   Run query:  
+   ```sql
+   SELECT * FROM workers LIMIT 10;
 
 ---
